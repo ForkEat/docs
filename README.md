@@ -64,7 +64,7 @@ Idées en vracs :
 
 Notre plateforme permet d'optimiser la consommation pour limiter le gachis et les déchets. Il est donc susceptible d'attirer les gens ayant une conviction écologique. Cette tendance est de plus en plus grandissante de nos jours.
 
-Pour donner un ordre idée, 40% des foyer français ont tendance à faire attention au gâchis.
+Pour donner un ordre d'idée, 40% des foyer français ont tendance à faire attention au gâchis.
 
 # Stack
 
