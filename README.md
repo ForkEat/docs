@@ -7,7 +7,7 @@ author:
     - Jean Michel Remeur
     - Thomas Lacaze
     - Arsène Lapostolet
-...
+---
 
 
 # Pitch
