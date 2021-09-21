@@ -74,6 +74,8 @@ Pour donner un ordre d'idée, 40% des foyer français ont tendance à faire atte
 - Prototype UI : Figma
 - RDMBS : Postgres (support natif de Full Text Search)
 
+![Stack Technique](architecture.png)
+
 # Répartition 
 
 - A Equipe Back : Marion + Arsène + Maud
