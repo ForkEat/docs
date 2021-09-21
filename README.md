@@ -53,6 +53,8 @@ Idées en vracs :
 - Prototype UI : Figma
 - RDMBS : Postgres (support natif de Full Text Search)
 
+![Stack Technique](architecture.png)
+
 # Répartition 
 
 - A Equipe Back : Marion + Arsène + Maud
@@ -85,6 +87,7 @@ Chef de Projet : Maud
 | Alerte péremption                                         |     |     | A   |      |
 | Alerte péremption : modulaire                             |     |     |     | A    |
 | Moteur de recettes : nutrition et contrainte alimentaires |     |     | A   |      |
+| Planification des repas                                  |     |     |     | A    |
 | **Machine Learning**                                      |     |     |     |      |
 | Moteur de recette : machine learning                      |     |     |     | C    |
 | **Application mobile**                                    | -   | -   | -   | -    |
@@ -95,11 +98,13 @@ Chef de Projet : Maud
 | Scan des produits                                         |     |     | D   |      |
 | Alerte péremption                                         |     |     | D   |      |
 | Alerte péremption : modulaire                             |     |     |     | D    |
+| Planification des repas                                  |     |     |     | D    |
 | **Web UI**                                                | -   | -   | -   | -    |
 | UI Gestion Stock                                          |     | B   |     |      |
 | UI Gestion recette                                        |     | B   |     |      |
 | Alerte péremption                                         |     |     | B   |      |
 | Alerte péremption : modulaire                             |     |     |     | B    |
+| Planification des repas                                  |     |     |     | B    |
 | **Embarqué**                                              | -   | -   | -   | -    |
 | Scan via caméra                                           |     | F   |     |      |
 | Information du scan sur écran                             |     |     | F   |      |
