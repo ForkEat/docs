@@ -34,37 +34,16 @@ Idées en vracs :
 - Intégration d'un système de la nutrition
 - Sharding : accès aux recettes d'autres instances
 
-# Etude de marché
+# Features
 
-## Concurrents
-
-- https://github.com/julianpoy/RecipeSage
-  - Pas de getsion de stock
-  - Pas d'appli mobile
-- https://github.com/AmandaBoatswain/McHacks2020
-  - Notion de stock uniquement
-  - Mauvaise UI/UX
-- https://github.com/wiltonribeiro/nutrivali-app
-  - Pas de gestion des recettes
-- https://github.com/ayns01/Fridge
-  - Stock uniquement
-- https://github.com/Bernd-L/exDateMan
-  - Dates de péremption uniquement
-  - Pas d'appli mobile
-
-## Valeur ajoutée
-
-- Un système avec toutes les features intégrées entre elles
+- Planification de repas
+- Gestion des stocks du frigo avec prise en compte de la date de péremption
 - Bonne UI/UX, bonne ergonomie
 - App mobile et App Web selon les cas d'utilisation
 - Auto-hébergeable, respectueux de la vie privée
 - Open source
 
-## Marché
-
-Notre plateforme permet d'optimiser la consommation pour limiter le gachis et les déchets. Il est donc susceptible d'attirer les gens ayant une conviction écologique. Cette tendance est de plus en plus grandissante de nos jours.
-
-Pour donner un ordre d'idée, 40% des foyer français ont tendance à faire attention au gâchis.
+# Etude de marché
 
 # Stack
 
