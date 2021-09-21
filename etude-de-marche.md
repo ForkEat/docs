@@ -73,16 +73,10 @@ Selon une étude récente, 55% des foyers français utilisent des applications d
 Enfin, la quetion du gaspillage alimentaire est de plus en plus présente chez les jeunes français, et la proposition de recette en fonction d'ingrédients, priorisant notemment les ingrédients les plus proches de leurs date de péremptions, permettra d'y répondre.
 
 Pour l'Europe : 
-Ces dernière questions se posent aussi en Europe, car la plupart des pays évoluent vers une alimentation plus responsable. 
+Ces dernière questions se posent aussi en Europe, car la plupart des pays évoluent vers une alimentation plus responsable. On pourrait s'attendre à un nombre potentiel de clients similaire à l'échelle de l'europe, en diminuant les chiffres dû à une différences dans les préférences d'alimentations, soit 45% des foyers européens pourraient être interessés par notre application.
 
 Pour le monde : 
-
-
-## Potentiel de marché et évolution - Maud
-
-Solution Opensource, mais possibilité d'avoir un raspberry pi embarqué donc fonction payante.
-
-Si c'était pas un projet étudiant on peut SaaS avec vente de l'embarqué. Avec calcul du coup de revient, ...
+A l'échelle du monde l'estimation est plus difficile à faire, car cela dépendra énormément des pays et de notre réussite à adapter l'application à des cultures culinaires différentes.
 
 ## Segmentation du marché
 
