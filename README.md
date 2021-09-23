@@ -7,7 +7,7 @@ author:
     - Jean Michel Remeur
     - Thomas Lacaze
     - Arsène Lapostolet
-...
+---
 
 # Pitch
 
@@ -108,14 +108,14 @@ C'est donc cet objectif que nous avons pensé l'application. Elle a pour but de 
 
 Voici une analyse de la concurrence sur le marché de la gestion de frigo, sur la zone géographique mondiale
 
-| Concurrent   | Description  | Forces et faiblesses  |
-|---|---|---|
-| [Fridge](https://github.com/ayns01/Fridge) <br/> ⭐ 0 <br/> 📅 22 Jun 2019 | Avertisseur de date de péremption | + UI sympa  <br/> - Application iOS uniquement  <br/> - Pas Scan du code barre par caméra <br/> + Notion de frigo (avec gestion du stock) <br/> - Gestion de la date de péremtion manuelle <br/> - Pas de planification des recettes <br/> - Pas de carnet de recettes |
-| [exDateMan](https://github.com/Bernd-L/exDateMan) <br/> ⭐ 3 <br/> 📅 29 Aug 2018 | Avertisseur de date de péremption | - Pas d'application  <br/> - Pas Scan du code barre par caméra <br/> + Notion de frigo (avec gestion du stock) <br/> - Gestion de la date de péremtion manuelle <br/> - Pas de planification des recettes <br/> - Pas de carnet de recettes |
-| [Nutrivali-app](https://github.com/wiltonribeiro/nutrivali-app) <br/> ⭐ 13 <br/> 📅 Jan 22 2019 | Avertisseur de date de péremption | + Scan du code barre par caméra <br/> + UI sympa  <br/> + Application iOS / Android  <br/> - Pas de notion de frigo (pas de gestion du stock) <br/> - Gestion de la date de péremtion manuelle <br/> - Pas de planification des recettes <br/> - Pas de carnet de recettes |
-| [McHacks2020](https://github.com/AmandaBoatswain/McHacks2020/) <br/> ⭐ 2 <br/> 📅 3 Feb 2020 | Avertisseur de date de péremption | + Scan du code barre par caméra <br/> - UI basique  <br/> - Pas de notion de frigo (pas de gestion du stock) <br/> - Gestion de la date de péremtion manuelle <br/> - Pas de planification des recettes <br/> - Pas de carnet de recettes |
-| [RecipeSage](https://github.com/julianpoy/RecipeSage) <br/> ⭐ 101 <br/> 📅 18 Feb 2018 | Gestionnaire de recettes, un planificateur de repas et un organisateur de listes d'achats collaboratifs. | + Parser pour importer des recettes de plusieurs sources <br/> + Gestionnaire de recettes avec planification <br/> - UI basique  <br/> - Pas de notion de frigo (pas de gestion du stock) <br/> - Pas de gestion de la date de péremption <br/> - Pas d'application mobile <br/> - Ajout manuel des produits (pas de scan des codes barres)|
-| [JOW](https://play.google.com/store/apps/details?id=com.wishop.dev.jow&hl=en_US&gl=US) <br/> DL 1 000 000 <br/> 📅 ?  | Gestionnaire de recettes, un planificateur de repas et préparation de la liste des achats | + Gestionnaire de recettes avec planification <br/> + UI sympa  <br/> - Pas de notion de frigo (pas de gestion du stock) <br/> - Pas de gestion de la date de péremption <br/> + Application mobile <br/> + Préparation d'une liste de course <br/> - Solution commerciale |
+| Concurrent                                                                                                          | Description                                                                                              | Forces et faiblesses                                                                                                                                                                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Fridge](https://github.com/ayns01/Fridge) <br/> ⭐ 0 <br/> 📅 22 Jun 2019                                            | Avertisseur de date de péremption                                                                        | + UI sympa  <br/> - Application iOS uniquement  <br/> - Pas Scan du code barre par caméra <br/> + Notion de frigo (avec gestion du stock) <br/> - Gestion de la date de péremtion manuelle <br/> - Pas de planification des recettes <br/> - Pas de carnet de recettes                                                                      |
+| [exDateMan](https://github.com/Bernd-L/exDateMan) <br/> ⭐ 3 <br/> 📅 29 Aug 2018                                     | Avertisseur de date de péremption                                                                        | - Pas d'application  <br/> - Pas Scan du code barre par caméra <br/> + Notion de frigo (avec gestion du stock) <br/> - Gestion de la date de péremtion manuelle <br/> - Pas de planification des recettes <br/> - Pas de carnet de recettes                                                                                                 |
+| [Nutrivali-app](https://github.com/wiltonribeiro/nutrivali-app) <br/> ⭐ 13 <br/> 📅 Jan 22 2019                      | Avertisseur de date de péremption                                                                        | + Scan du code barre par caméra <br/> + UI sympa  <br/> + Application iOS / Android  <br/> - Pas de notion de frigo (pas de gestion du stock) <br/> - Gestion de la date de péremtion manuelle <br/> - Pas de planification des recettes <br/> - Pas de carnet de recettes                                                                  |
+| [McHacks2020](https://github.com/AmandaBoatswain/McHacks2020/) <br/> ⭐ 2 <br/> 📅 3 Feb 2020                         | Avertisseur de date de péremption                                                                        | + Scan du code barre par caméra <br/> - UI basique  <br/> - Pas de notion de frigo (pas de gestion du stock) <br/> - Gestion de la date de péremtion manuelle <br/> - Pas de planification des recettes <br/> - Pas de carnet de recettes                                                                                                   |
+| [RecipeSage](https://github.com/julianpoy/RecipeSage) <br/> ⭐ 101 <br/> 📅 18 Feb 2018                               | Gestionnaire de recettes, un planificateur de repas et un organisateur de listes d'achats collaboratifs. | + Parser pour importer des recettes de plusieurs sources <br/> + Gestionnaire de recettes avec planification <br/> - UI basique  <br/> - Pas de notion de frigo (pas de gestion du stock) <br/> - Pas de gestion de la date de péremption <br/> - Pas d'application mobile <br/> - Ajout manuel des produits (pas de scan des codes barres) |
+| [JOW](https://play.google.com/store/apps/details?id=com.wishop.dev.jow&hl=en_US&gl=US) <br/> DL 1 000 000 <br/> 📅 ? | Gestionnaire de recettes, un planificateur de repas et préparation de la liste des achats                | + Gestionnaire de recettes avec planification <br/> + UI sympa  <br/> - Pas de notion de frigo (pas de gestion du stock) <br/> - Pas de gestion de la date de péremption <br/> + Application mobile <br/> + Préparation d'une liste de course <br/> - Solution commerciale                                                                  |
 
 # Stack
 
@@ -125,7 +125,7 @@ Voici une analyse de la concurrence sur le marché de la gestion de frigo, sur l
 - Prototype UI : Figma
 - RDMBS : Postgres (support natif de Full Text Search)
 
-![Stack Technique](architecture.png)
+![Stack Technique](images/architecture.png)
 
 # Répartition 
 
@@ -141,8 +141,10 @@ Chef de Projet : Maud
 
 # Livrables
 
+La version V0 peut être considérer comme MVP
+
 |                                                           | V.0 | V.1 | V.2 | V.3+ |
-|-----------------------------------------------------------|-----|-----|-----|------|
+| --------------------------------------------------------- | --- | --- | --- | ---- |
 |                                                           |     |     |     |      |
 | **Infra**                                                 | -   | -   | -   | -    |
 | Pipelines CI/CD sur AMD64                                 | G   |     |     |      |
@@ -159,7 +161,7 @@ Chef de Projet : Maud
 | Alerte péremption                                         |     |     | A   |      |
 | Alerte péremption : modulaire                             |     |     |     | A    |
 | Moteur de recettes : nutrition et contrainte alimentaires |     |     | A   |      |
-| Planification des repas                                  |     |     |     | A    |
+| Planification des repas                                   |     |     |     | A    |
 | **Machine Learning**                                      |     |     |     |      |
 | Moteur de recette : machine learning                      |     |     |     | C    |
 | **Application mobile**                                    | -   | -   | -   | -    |
@@ -170,13 +172,13 @@ Chef de Projet : Maud
 | Scan des produits                                         |     |     | D   |      |
 | Alerte péremption                                         |     |     | D   |      |
 | Alerte péremption : modulaire                             |     |     |     | D    |
-| Planification des repas                                  |     |     |     | D    |
+| Planification des repas                                   |     |     |     | D    |
 | **Web UI**                                                | -   | -   | -   | -    |
 | UI Gestion Stock                                          |     | B   |     |      |
 | UI Gestion recette                                        |     | B   |     |      |
 | Alerte péremption                                         |     |     | B   |      |
 | Alerte péremption : modulaire                             |     |     |     | B    |
-| Planification des repas                                  |     |     |     | B    |
+| Planification des repas                                   |     |     |     | B    |
 | **Embarqué**                                              | -   | -   | -   | -    |
 | Scan via caméra                                           |     | F   |     |      |
 | Information du scan sur écran                             |     |     | F   |      |
@@ -186,4 +188,4 @@ Chef de Projet : Maud
 
 # Diagramme UML du modèle de donnée métier
 
-![Diagramme UML](datamodel-fork-eat.png)
+![Diagramme UML](images/datamodel-fork-eat.png)
