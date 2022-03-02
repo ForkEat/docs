@@ -101,10 +101,29 @@ Stock "1" o--> "*" Unit : + Unit
 
 ## Application Mobile 
 
+
+### Flutter
+
 Pour la partie mobile nous avons décidé d'utiliser Flutter comme outil de développement, car il apporte beaucoup d'avantages. Dans un premier temps, grâce au langage Dart, il est possible de rafraîchir rapidement l'affichage de l'écran en prenant en compte les modifications avec le "hot reload", ce qui évite d'avoir à fermer l'application et de la relancer. De plus, il possède toutes les fonctionnalités des plates-formes natives comme le défilement, la navigation, la police d'icônes, le texte, la vue Liste, etc. Mais également des widgets et designs qui lui sont propres ce qui le rend indépendant de la plateforme et lui permet de couvrir à la fois iOS et Android. Ainsi une application peut être conçue pour fonctionner sur les deux plateformes. 
 L'écosystème est open source et tous les packages sont sous licence BSD ou MIT ce qui les rend totalement libre d'utilisation.
 
+### Dart
+
 Dart est un langage de programmation optimisé pour plusieurs plateformes. C'est un langage orienté objet et asynchrone qui supporte le fonctionnement de code en parallèle et permet de fournir des réponses en temps réel.
+
+### BLoC 
+
+BLoC est une bibliothèque utilisé afin de gérer les différents états de l'application et plus particulièrement les états de chaque pages ou élément graphiques.
+
+BLoC a été développé afin d'être facile à comprendre et à prendre en main par tout développeur. De rendre le développement d'application Flutter plus flexible en décomposant les élements graphiques et logiques en composants réutilisables. Et permettre de tester facilement tous les aspects et cas d'utilisation possible d'une application afin de développer une application de façon itérative.
+
+BLoC permet :
+- De connaitre l'état de l'application chaque instant ;
+- De s'assurer du bon fonctionnement de l'application en testant chaque cas d'utilisation ;
+- D'enregistrer chaque intéraction de l'utilisateur afin de décider des données à afficher ;
+- De fonctionner de façon efficiente et de réutiliser les composants dans une même application ou dans d'autres ;
+- D'avoir des applications développées en suivant une convention et pattern ;
+- Développer des applications rapide et réactives.
 
 ## Serveur d'application
 
@@ -308,9 +327,39 @@ Au niveau technique, nous utilisons le package `Microsoft.AspNetCore.Authenticat
 
 ## Mobile
 
-Nous avons choisi de faire une architecture clean patern dans le but de faire des tests unitaires que nous n'avons malheureusement pas eu le temps de faire.
+Nous avons aussi choisi de suivre la philosophie de développement logiciel "Clean Architecture" comme expliqué précédemment.
 
-// Détail de l'archi des fichiers
+### Files architecture
+
+    .
+    ├── assets
+    ├── android
+    ├── ios
+    ├── lib
+    │   ├── app
+    │   ├── core
+    │   ├── l10n
+    │   ├── data
+    │   ├── domain
+    │   ├── presentation
+    │   └── main.dart
+    ├── l10n.yaml
+    └── pubspec.yaml
+
+L'architecture global de l'application est présenté comme ci-dessus.
+
+Le dossier `assets` contient tous les éléments visuel statique, tel que des images ou des polices que nous utilisons dans l'application.
+
+Les répetoires `android` et `ios` permettent de dire à Flutter que cette application fonctionne sur ces deux plateformes (il est par exemple possible d'avoir un dossier `web` ou `windows`, plateforme avec lequelles Flutter est aussi compatible), et qui nous permettent de configurer ou d'ajouter du code spécifique à cette plateforme.
+
+Le dossier `lib` est le dossier principal de l'application. 
+Il contient tout le code source Dart et plus particulièrement le fichier `main.dart` qui est le point d'entrée de toute application.
+Ce répertoire est composé de plusieurs répertoires organisé de tel façon à suivre la "Clean Architecture".
+![Clean ArchitectureFlutter](images/clean_architecture_flutter.png)
+
+Le fichier `l10n.yaml` permet de spécifier l'internationalisation de l'application en utilisant des fichiers `.arb`.
+
+Et enfin le fichier `pubspec.yaml` est le fichier principal d'une application Flutter. Il référence toutes les bibliothèques utilisées par l'application et permet de configurer Dart et Flutter.
 
 ## Embarqué
  
