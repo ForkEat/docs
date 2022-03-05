@@ -363,7 +363,7 @@ Et enfin le fichier `pubspec.yaml` est le fichier principal d'une application Fl
 
 ## Embarqué
  
-Nous avons eu comme idée de développer une partie embarquée, le but étant avec un Raspberry pi équipé d'une caméra de scanner les produits afin de plus facilement les ajouter dans l'application. La création d'une solution embarquée utilisable par le client est toujours quelque chose très délicat. En effet, nous avons commencé par le développement d'une solution permettant à une personne de configurer le Wifi du Raspberry Pi automatiquement depuis son téléphone. Pour des raisons de performance nous nous sommes dirigés vers le langage Go
+Nous avons eu comme idée de développer une partie embarquée, le but étant avec un Raspberry pi équipé d'une caméra de scanner les produits afin de plus facilement les ajouter dans l'application. La création d'une solution embarquée utilisable par le client est toujours quelque chose très délicat. En effet, nous avons commencé par le développement d'une solution permettant à une personne de configurer le Wifi du Raspberry Pi automatiquement depuis son téléphone (utilisation d'une librairie existante en partie IoTWifi). Pour des raisons de performance nous nous sommes dirigés vers le langage Go
 
 Le cas d'utilisation pour l'initialisation est le suivant : 
 
