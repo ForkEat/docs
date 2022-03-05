@@ -144,7 +144,16 @@ Enfin, pour la documentation de l'application, nous avons utilisé l'intégratio
 
 ## Prototype UI
 
-// TODO Figma
+Avant de nous lancer dans le développement de l'application, nous avons décidé de d'abord maquetter l'interface, afin d'avoir une idée de comment l'application allait être utilisé, ainsi qu'une première direction pour la charte graphique. Bien entendu, au fur et à mesure du développement, nous avons décidé de ne pas rester fixer sur la maquette. 
+
+Voici la charte graphique que nous avions définie au début, qui avait pour but d'être une ligne directrice sur les couleurs, les interfaces classiques comme input et bouton et les logos. Vous pouvez voir plusieurs types d'écran avec des associations de couleurs que nous avons ensuite séléctionnée par un vote : 
+
+![Charte graphique](images/charteGraphique.PNG)
+
+Et ici la maquette pour avoir une ébauche plus détaillée de ce que nous voulions comme application : 
+
+![Extrait de la maquette](images/maquette1.PNG)
+![Extrait de la maquette](images/maquette2.PNG)
 
 ## Serveur de base de donnée
 
