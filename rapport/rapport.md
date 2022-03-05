@@ -2,7 +2,7 @@
 title: "Fork Eat by Foodéfix"
 author:
  - Maud Gellée
- - Marion Armangaud
+ - Marion Armengaud
  - Carine Talandier
  - Jean Michel Remeur
  - Thomas Lacaze
