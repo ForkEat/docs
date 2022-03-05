@@ -372,7 +372,7 @@ Et enfin le fichier `pubspec.yaml` est le fichier principal d'une application Fl
 
 ## Embarqué
  
-Nous avons eu comme idée de développer une partie embarquée, le but étant avec un Raspberry pi équipé d'une caméra de scanner les produits afin de plus facilement les ajouter dans l'application. La création d'une solution embarquée utilisable par le client est toujours quelque chose très délicat. En effet, nous avons commencé par le développement d'une solution permettant à une personne de configurer le Wifi du Raspberry Pi automatiquement depuis son téléphone. Pour des raisons de performance nous nous sommes dirigés vers le langage Go
+Nous avons eu comme idée de développer une partie embarquée, le but étant avec un Raspberry pi équipé d'une caméra de scanner les produits afin de plus facilement les ajouter dans l'application. La création d'une solution embarquée utilisable par le client est toujours quelque chose très délicat. En effet, nous avons commencé par le développement d'une solution permettant à une personne de configurer le Wifi du Raspberry Pi automatiquement depuis son téléphone (utilisation d'une librairie existante en partie IoTWifi). Pour des raisons de performance nous nous sommes dirigés vers le langage Go
 
 Le cas d'utilisation pour l'initialisation est le suivant : 
 
@@ -628,8 +628,8 @@ Aussi, nous avons eu des soucis pour l'exécution des tests d'intégration qui a
 
 ## Mobile
 
-Nous n'avons pas eu de difficultés particulières sur le développement. 
-Syncro front & back difficile même si Swagger
+Nous avions un membre du groupe qui était dans une autre classe, ce qui fait qu'il était involontairement mis à l'écart lors des points qui se faisaient pendant les heures allouées aux projets, mais aussi que la deuxième personne sur le mobile était seule pour travailler pendant ces heures.
+Nous avons également eu quelques problèmes de synchronisation entre le front et le back malgrès la présence d'un Swagger. 
 
 ## Embarqué
 
