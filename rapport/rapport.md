@@ -628,8 +628,8 @@ Aussi, nous avons eu des soucis pour l'exécution des tests d'intégration qui a
 
 ## Mobile
 
-Nous n'avons pas eu de difficultés particulières sur le développement. 
-Syncro front & back difficile même si Swagger
+Nous avions un membre du groupe qui était dans une autre classe, ce qui fait qu'il était involontairement mis à l'écart lors des points qui se faisaient pendant les heures allouées aux projets, mais aussi que la deuxième personne sur le mobile était seule pour travailler pendant ces heures.
+Nous avons également eu quelques problèmes de synchronisation entre le front et le back malgrès la présence d'un Swagger. 
 
 ## Embarqué
 
