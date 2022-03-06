@@ -37,7 +37,7 @@ Nous avons créé une application open-source et autohébergeable de gestion de 
 
 Au fur et à mesure de notre avancée sur le projet, nous avons précisé nos connaissances du domaine pour arriver au modèle de donnée suivant : 
 
-```plantuml
+```{ .plantuml height=50%}
 @startuml
 skinparam dpi 600
 class Recipe {
@@ -118,21 +118,22 @@ BLoC est une bibliothèque utilisé afin de gérer les différents états de l'a
 BLoC a été développé afin d'être facile à comprendre et à prendre en main par tout développeur. De rendre le développement d'application Flutter plus flexible en décomposant les élements graphiques et logiques en composants réutilisables. Et permettre de tester facilement tous les aspects et cas d'utilisation possible d'une application afin de développer une application de façon itérative.
 
 BLoC permet :
-- De connaitre l'état de l'application chaque instant ;
-- De s'assurer du bon fonctionnement de l'application en testant chaque cas d'utilisation ;
-- D'enregistrer chaque intéraction de l'utilisateur afin de décider des données à afficher ;
-- De fonctionner de façon efficiente et de réutiliser les composants dans une même application ou dans d'autres ;
-- D'avoir des applications développées en suivant une convention et pattern ;
-- Développer des applications rapide et réactives.
+
+- De connaitre l'état de l'application chaque instant
+- De s'assurer du bon fonctionnement de l'application en testant chaque cas d'utilisation
+- D'enregistrer chaque intéraction de l'utilisateur afin de décider des données à afficher
+- De fonctionner de façon efficiente et de réutiliser les composants dans une même application ou dans d'autres
+- D'avoir des applications développées en suivant une convention et pattern
+- Développer des applications rapide et réactives
 
 ## Serveur d'application
 
-Le serveur d'application est écrit avec le langage C# sur le runtime cross-plateforme et open-source .NET 6 (nous avons commencé sur la version 5 puis continué sur la version 6 sortie en novembre). Nous avons choisi C# et .NET.
+Le serveur d'application est écrit avec le langage C# sur le runtime cross-plateforme et open-source .NET 6 (nous avons commencé sur la version 5 puis continué sur la version 6 sortie en novembre).
 
-C# est un langage polyvalent et multiparadigme créé par Microsoft en 2000 et devenu cross-plateforme et open source en 2016. Il supporte un typage fort et bien que principalement orienté objet, il supporte beaucoup de fonctionnalités du paradigme orienté fonction. C# est compilé pour le runtime managé .NET qui permet la gestion automatique de la mémoire par un ramasse-miette. Nous avons choisi C# et .NET, car ce sont des outils modernes qui permettent de développer du code fiable et ce avec un bon confort de développement.
+C# est un langage polyvalent et multiparadigme créé par Microsoft en 2000 et devenu cross-plateforme et open source en 2016. Il supporte un typage fort et bien que principalement orienté objet, il supporte beaucoup de fonctionnalités du paradigme orienté fonction. C# est compilé pour le runtime managé .NET qui permet la gestion automatique de la mémoire par un ramasse-miette. Nous avons choisi C# et .NET, car ce sont des outils modernes qui permettent de développer du code fiable, grâce au typage fort, et ce avec un bon confort de développement, grâce au nombreuses fonctionnalités modernes du langage. De plus, C# .NET est très intéressant pour le développement d'application coté serveur, car il supporte l'attente non bloquante et le parallélisme multi-threadé grâce à sa Task Parrallel Library.
 
 Pour le protocole de communication avec le client, nous avons sélectionné REST, le standard en la matière de service Web.
-Notre application backend est donc une API Web REST développée le framework web fournis avec le runtime .NET, ASP .NET Core. ASP .NET Core est moderne et rapide (il utilise le serveur web Kestrel) et fournit des fonctionnalités intéressantes comme le support natif d'un conteneur d'injection de dépendance.
+Notre application backend est donc une API Web REST développée avec le framework web fournis avec le runtime .NET, ASP .NET Core. ASP .NET Core est moderne et rapide (il utilise le serveur web Kestrel) et fournit des fonctionnalités intéressantes comme le support natif d'un conteneur d'injection de dépendance.
 
 La sécurité de l'API et gérée par une authentification utilisant JSON Web Tokens. Cette option est la plus compatible avec ReST, respectant son caractère sans état.
 
@@ -153,6 +154,9 @@ Voici la charte graphique que nous avions définie au début, qui avait pour but
 Et ici la maquette pour avoir une ébauche plus détaillée de ce que nous voulions comme application : 
 
 ![Extrait de la maquette](images/maquette1.PNG)
+
+\newpage{}
+
 ![Extrait de la maquette](images/maquette2.PNG)
 
 ## Serveur de base de donnée
@@ -163,25 +167,23 @@ Pour cette application, nous avions besoin d'une base de donnée relationnelle. 
 
 ### Conteneurisation d'application
 
-Nous avons utilisé Docker pour facilité les déploiements, c’est un outil Open Source qui permet de créer différents conteneurs (plus souvent appelés containers). Dans chacun d’eux se trouve une ou plusieurs applications. Cet élément permet de déplacer facilement les containers et de les déployer sur différents serveurs.
+Nous avons utilisé Docker pour facilité les déploiements, c’est un outil Open Source qui permet de créer différents conteneurs. Dans chacun d’eux se trouve une ou plusieurs applications. Cet élément permet de déplacer facilement les conteneurs et de les déployer sur différents serveurs.
 
-Docker repose sur la décomposition des couches applicatives, cela permet à chaque application d’être maintenue de façon autonome mais aussi de disposer de différentes versions entre les instances. 
+Docker repose sur la décomposition des couches applicatives, cela permet à chaque application d’être maintenue de façon autonome, mais aussi de disposer de différentes versions entre les instances. 
  
-Un container est une image d’une application à l'instant T. Les images sont disponibles soit sur un registre privé[^1] ou public (Docker hub), soit il est possible de créer ses propres images à l’aide d’un fichier Dockerfile. Tout Dockerfile se base déjà sur une image créée au préalable. 
+Un conteneur est une image d’une application à l'instant T. Les images sont disponibles soit sur un registre[^1] privé ou public (Docker hub). Il est également possible de créer ses propres images à l’aide d’un fichier Dockerfile. Tout Dockerfile se base déjà sur une image créée au préalable. 
 
 [^1]: Ensemble d’images communautaires regroupées sur un site. (Equivalent à Github mais pour les images Docker).
  
 Ainsi, le mécanisme d’image permet l’interopérabilité. Grâce au Docker Engine les images créées sont disponibles sur n’importe quel système d’exploitation : Windows, Linux, Mac OS. Cela permet de réaliser la migration d’un serveur à un autre très facilement et de faciliter la maintenance des couches applicatives.
 
-Cet outil dispose d’un avantage conséquent face aux machines virtuelles (VM) : pour faire tourner un container il faut moins de ressources. En effet, sur une machine virtuelle, il est obligatoire de virtualiser le système d’exploitation (OS) comme Debian, Ubuntu, Windows alors que le container se base sur la technologie LXC (Linux Container) qui est une méthode de cloisonnement de l’OS. Ainsi chaque container est isolé les uns des autres mais ils partagent tous le même noyau. Un container n’inclut donc pas d’OS. C’est pour cela que Docker demande moins de ressources et permet de mettre plus de containers par serveur.
+Cet outil dispose d’un avantage conséquent face aux machines virtuelles (VM) : pour faire tourner un conteneur, il faut moins de ressources. En effet, sur une machine virtuelle, il est obligatoire de virtualiser le système d’exploitation (OS) comme Debian, Ubuntu, Windows alors que le conteneur se base sur la technologie LXC (Linux Container) qui est une méthode de cloisonnement de l’OS. Ainsi chaque conteneur est isolé les uns des autres, mais ils partagent tous le même noyau. Un conteneur n’inclut donc pas la totalité de l'OS. C’est pour cela que Docker demande moins de ressources et permet de mettre plus de conteneurs par serveur.
 
 ![Différences entre Container et VM](images/docker.png)
 
 ### Traefik 
 
 L’un des problèmes avec les conteneurs est leur cycle de vie court. Un conteneur peut être détruit et recréé beaucoup de fois en un espace de temps réduit. Ainsi avec un reverse proxy traditionnel comme Nginx, il n’est pas possible d’associer un conteneur à un trafic défini, il faut forcément passer par un port. Traefik est un reverse proxy plus récent permettant de gérer dynamiquement divers fournisseurs (Docker, Kubernetes, AWS, ...). Il n’est donc pas nécessaire de passer par l’ouverture d’un port comme le fait Nginx. 
- 
-Traefik est un edge router créé par Containous une société française fondée par Emile Vauge. Celle-ci propose Traefik en open-source sur Github, mais aussi Traefik EE pour Entreprise Edition permettant le load balancing et de la haute disponibilité. 
  
 Ainsi, prenons un exemple simple. Si nous n’utilisons pas un reverse proxy tel que Traefik, lors d’un déploiement d’un conteneur Docker, nous devons exposer le port du service en dehors du conteneur afin de pouvoir y accéder de l’extérieur. Si en plus nous voulons lui associer un sous domaine nous devons alors utiliser Nginx, ou un autre système afin de rediriger le trafic du sous domaine vers le port d’écoute du conteneur. 
  
@@ -191,8 +193,7 @@ Dans cette opération rien n’est automatique. Cela devient fastidieux lors qu�
 
 ## Drone
 
-Drone est un outil d'intégration continue permettant d'automatiser le déploiement d'applications. Drone est un outil comparable à Jenkins seulement, il a pour avantage d'être nativement compatible avec Docker : c'est la raison pour laquelle nous l'avons choisi pour déployer le front de notre application : avec Drone, il était bien plus simple de gérer les différentes images Docker auxquelles nous avons pu avoir recours.
-
+Drone est un outil d'intégration continue permettant d'automatiser le déploiement d'applications. Drone est un outil comparable à Jenkins seulement, il a pour avantage d'être nativement compatible avec Docker : c'est la raison pour laquelle nous l'avons choisi pour déployer notre application : avec Drone, il était bien plus simple de gérer les différentes images Docker auxquelles nous avons pu avoir recours.
 
 ## Terraform
 
@@ -216,28 +217,16 @@ En complément de Terraform nous avons besoin d'Ansible. C'est un outil open-sou
 
 ### Golang
 
-L’une des principales compétences que j’ai pu acquérir grâce à Eiffage est la programmation en Golang. Ce nouveau langage de programmation développé par Google depuis 2007 est là pour s’adapter à une évolution des autres langages et vient répondre à de nouveaux besoins. 
-En effet, les logiciels sont de plus en plus complexes, et la force d’un langage réside dans le choix des fonctions et concepts qu’il intègre ainsi que la manière dont ils sont intégrés. Or le Go prend exemple sur des langages préexistants pour y prendre le meilleur, et se concentre également sur des fonctionnalités modernes. 
- 
-Pour mettre en évidence la jeunesse de ce langage, la première version du Go date du 10 Novembre 2009 et sa première version stable de Mars 2012. Le langage C est apparu en 1972, il y a maintenant 47 ans. 
- 
-Des éléments comme une syntaxe proche du C, une compilation rapide, ou encore un ciblage du monde actuel avec la programmation multi cœur, many-cœur complétés avec une gestion automatique de la mémoire apportent de nombreux bénéfices. 
- 
-Les fabricants de matériel informatique ajoutent de plus en plus de cœurs aux processeurs pour en augmenter les performances. Tous les centres de données fonctionnent sur ces processeurs et nous devrions nous attendre à une augmentation du nombre de cœurs dans les années à venir. De plus, les applications d’aujourd’hui utilisent de multiples micro-services pour maintenir les connexions aux bases de données et gérer les files d'attente de messages et les caches. Ainsi, les logiciels développés et les langages de programmation utilisés, devraient pouvoir supporter facilement la concurrence et être évolutifs avec un nombre accru de cœurs. 
- 
-Cependant, la plupart des langages de programmation modernes (comme Java, Python, etc.) sont issus de l’environnement single-threaded des années 90. La plupart de ces langages de programmation supportent certes le multi-threading, mais le vrai problème vient de l’exécution simultanée, du verrouillage des threads, des situations de compétition et des interblocages. Ces éléments rendent difficile la création d'une application multi threadée sur ces langages. 
- 
-D'autre part, Go a été lancé en 2009 alors que les processeurs multi-cœurs étaient déjà disponibles. C'est pourquoi Go a été conçu en tenant compte de la concurrence. Go a des goroutines au lieu de threads. Ils consomment environ 2KB du tas. Ainsi, il est possible de faire tourner des millions de goroutines à tout moment. 
-L'un des avantages les plus importants des langages C ou C++ par rapport à d'autres langages modernes de plus haut niveau comme Java ou Python est leur performance. En effet, les langages C et C++ sont compilés et non interprétés. 
- 
-Le Go supporte des mécanismes souvent retrouvés dans des langages plus haut niveau comme le ramasse-miettes tout en présentant une syntaxe et une performance proche des langages de niveau inférieur comme le C ou le C++, le Go étant un langage compilé. 
- 
-De plus, les logiciels développés de manière optimisée peuvent fonctionner sur du matériel moins cher et plus lent (comme les appareils IoT) ce qui élargit leurs domaines d’applications. 
+Go est un langage de programmation moderne qui présente des fonctionnalités comme : une syntaxe proche du C, une compilation rapide, ou encore un ciblage du monde actuel avec la programmation multi cœur, many-cœur complétés avec une gestion automatique de la mémoire apportent de nombreux bénéfices. 
+
+Go a été conçu pour exploiter au maximum les performances des machines multi-threadées, et ce, plus facilement que dans d'autre langages comme Java ou Python. Go a des goroutines au lieu de threads. Ils consomment environ 2KB du tas. Ainsi, il est possible de faire tourner des millions de goroutines à tout moment. Go supporte des mécanismes souvent retrouvés dans des langages plus haut niveau comme le ramasse-miettes tout en présentant une syntaxe et une performance proche des langages de niveau inférieur comme le C ou le C++, le Go étant un langage compilé. Ainsi, les logiciels développés de manière optimisée peuvent fonctionner sur du matériel moins cher et plus lent (comme les appareils IoT) ce qui élargit leurs domaines d’applications. 
 
 ## Machine learning
 
-Comme la plupart des implémentations de machine learning, nous avons choisi python comme langage de programmation. Pour faciliter le développement et la séparation claire des étapes, nous avons utilisé jupyter notebook comme outil de développement. De plus, pour gérer plus facilement les dépendances aux diverses bibliothèques utilisées, nous nous sommes aidé de miniconda pour créer un environnement indépendant des machines.
-La bibliothèque principale que nous avons utilisé est gensim, une bibliothèque open source, réputée pour ses modèles thématique (topic model) non supervisés et ses modèles de NLP.
+Comme la plupart des implémentations de machine learning, nous avons choisi python comme langage de programmation. Pour faciliter le développement et la séparation claire des étapes, nous avons utilisé Jupyter Notebook comme outil de développement. De plus, pour gérer plus facilement les dépendances aux diverses bibliothèques utilisées, nous nous sommes aidé de Miniconda pour créer un environnement indépendant des machines.
+La bibliothèque principale que nous avons utilisé est Gensim, une bibliothèque open source, réputée pour ses modèles thématique (topic model) non supervisés et ses modèles de NLP.
+
+\newpage{}
 
 # Architecture technique et méthodologies de développement
 
@@ -254,6 +243,8 @@ Le besoin de la Clean Architecture vient du simple besoin métier de minimiser l
 Dans la Clean Architecture, le système est représenté selon le découpage suivant : 
 
 ![Clean Architecture](images/clean_architecture.png)
+
+\newpage{}
 
 Le principe le plus fondamental est le fait que les dépendances doivent toujours pointer de l'extérieur vers l'intérieur, car plus on avance vers le centre plus on monte en abstraction. 
 
@@ -312,7 +303,7 @@ Le TDD déclare les trois lois suivantes :
 Le cycle court de développement suivant le TDD se découpe donc en trois étapes :
 
 - Écrire un test qui échoue
-- Écrire un test le code de production pour faire passer le test
+- Écrire le code de production pour faire passer le test
 - Procéder à un *refactoring* du code pour s'assurer qu'il soit propre
 
 Les avantages de l'utilisation de TDD sont les suivants : 
@@ -324,7 +315,7 @@ Les avantages de l'utilisation de TDD sont les suivants :
 Ainsi, dans notre application nous avons : 
 
 - 122 tests unitaires
-- 46 tests d'intégration
+- 47 tests d'intégration
 
 Ces tests mettent en œuvre une couverture du code à hauteur de plus de 95%. Pour mesurer la couverture de code, nous avons utilisé un outil tiers appelé CodeCov, et nous l'avons intégré à notre pipeline d'intégration, ainsi, à chaque merge request, nous avions un rapport sur la couverture de code.
 
@@ -340,6 +331,7 @@ Nous avons aussi choisi de suivre la philosophie de développement logiciel "Cle
 
 ### Files architecture
 
+```
     .
     ├── assets
     ├── android
@@ -354,17 +346,19 @@ Nous avons aussi choisi de suivre la philosophie de développement logiciel "Cle
     │   └── main.dart
     ├── l10n.yaml
     └── pubspec.yaml
+```
 
-L'architecture global de l'application est présenté comme ci-dessus.
+L'architecture globale de l'application est présenté comme ci-dessus.
 
-Le dossier `assets` contient tous les éléments visuel statique, tel que des images ou des polices que nous utilisons dans l'application.
+Le dossier `assets` contient tous les éléments visuels statique, tel que des images ou des polices que nous utilisons dans l'application.
 
 Les répetoires `android` et `ios` permettent de dire à Flutter que cette application fonctionne sur ces deux plateformes (il est par exemple possible d'avoir un dossier `web` ou `windows`, plateforme avec lequelles Flutter est aussi compatible), et qui nous permettent de configurer ou d'ajouter du code spécifique à cette plateforme.
 
 Le dossier `lib` est le dossier principal de l'application. 
 Il contient tout le code source Dart et plus particulièrement le fichier `main.dart` qui est le point d'entrée de toute application.
 Ce répertoire est composé de plusieurs répertoires organisé de tel façon à suivre la "Clean Architecture".
-![Clean ArchitectureFlutter](images/clean_architecture_flutter.png)
+
+![Clean Architecture Flutter](images/ca_flutter.png)
 
 Le fichier `l10n.yaml` permet de spécifier l'internationalisation de l'application en utilisant des fichiers `.arb`.
 
@@ -382,7 +376,7 @@ Le cas d'utilisation pour l'initialisation est le suivant :
 - Ainsi le Raspberry pi est connecté au Wifi de manière "User friendly"
 - Si jamais le Raspberry Pi ne trouve pas le SSID enregistré, il va de nouveau recréer un réseau temporaire afin de recommencer l'appairage avec le réseau wifi domestique
 
-![PI_wifi](images/raspi_screen.gif)
+![PI_wifi](images/raspi_screen.gif){ height=30% }
 
 Une fois ceci fait l'utilisateur peut scanner le produit les l'ajouter ou le sortir du frigo en utilisant ainsi les boutons présents sur le Raspberry Pi.
 
@@ -416,6 +410,10 @@ Si nous prenons l'exemple du backend, nous avons deux pipelines lors d'un commit
 ![Pipeline](images/pipeline.png)
 
 Cependant, nous nous commitons notre code sur une autre branch alors nous aurons uniquement le lancement des tests unitaires et d'intégrations avec le code coverage. Nous n'avons pas besoin de lancer le déploiement d'une image Docker. A contrario, si nous créons un tag sur le dépot Github, la CI va lancer le déploiement de l'image en utilisant les tags comme version :
+
+\newpage{}
+
+\newpage{}
 
 ![DockerHub](images/docker_version.png)
 
@@ -618,33 +616,30 @@ Le modèle de Bag Of Word est une représentation simplifiée d'un document util
 
 # Problèmes rencontrés
 
-## Front-end
-
 ## Back-end
 
-Au niveau du serveur, nous avons eu des difficultés à implémenter une full-text search, nous pensions que PostgreSQL pourrait supporter cette dernière simplement sur des données structurées, mais ce n'était finalement pas le cas. Après avoir tenté différentes approches nous nous sommes rabattus sur une recherche par pattern de nom en utilisant la clause `LIKE` de SQL.
+Au niveau du serveur, nous avons eu des difficultés à implémenter une full-text search, nous pensions que PostgreSQL pourrait supporter cette dernière simplement sur des données structurées, mais ce n'était finalement pas le cas. Après avoir tenté différentes approches, nous nous sommes rabattus sur une recherche par pattern de nom en utilisant la clause `LIKE` de SQL.
 
 Aussi, nous avons eu des soucis pour l'exécution des tests d'intégration qui au début s'exécutaient en parallèle, les faisant échouer, car partageant la même base de donnée. Nous avons dû configurer de façon précise le framework de test xUnit afin de les exécuter en série.
 
 ## Mobile
 
 Nous avions un membre du groupe qui était dans une autre classe, ce qui fait qu'il était involontairement mis à l'écart lors des points qui se faisaient pendant les heures allouées aux projets, mais aussi que la deuxième personne sur le mobile était seule pour travailler pendant ces heures.
-Nous avons également eu quelques problèmes de synchronisation entre le front et le back, concernant les requêtes, les objets des requêtes ...Etc. Malgrès la présence d'un Swagger qui permet de repertorier comment est utilisée chaque requête. 
+Nous avons également eu quelques problèmes de synchronisation entre le front et le back, concernant l'utilisation des endpoints, malgré la présence d'une documentation auto-générée de l'API, Swagger qui permet de documenter l'utilisation de chaque endpoint.
 
 ## Embarqué
 
-L'embarqué a été compliqué avec le manque de temps alloué à cette partie. De plus, elle nécessite d'avoir un backend & front-end fonctionnelle afin de pouvoir développer des features complémentaires (configuration du wifi du Raspberry PI via l'application). C'est pour cela qu'aujourd'hui, la partie embarquée a été mise de côté afin de mieux développer les autres stack.
+L'embarqué a été compliqué avec le manque de temps alloué à cette partie. De plus, elle nécessite d'avoir des backend & front-end fonctionnels afin de pouvoir développer des fonctionnalités complémentaires (configuration du wifi du Raspberry PI via l'application). C'est pour cela qu'aujourd'hui, la partie embarquée a été mise de côté afin de mieux développer les autres parties de l'application.
 
 Cela ne nous a pas empêché d'avoir des difficultés avec la partie embarquée. La lecture des codes barres des produits a été effectuée en Go avec utilisant l'outil Zbar associé à OpenCV. Cependant, la caméra du Raspberry PI ne disposait pas d'autofocus, ce qui nous a rendu la tâche compliquée afin d'avoir une image nette. Nous avons ensuite utilisé une webcam USB disposant un autofocus, malheureusement la définition de la vidéo n'était pas suffisante. Avant d'être capable d'identifier que le problème provenait des caméras utilisées sur le Raspberry Pi, nous avons testé le bon fonctionnement du programme de reconnaissance de code barre sur un ordinateur portable avec une webcam de haute qualité avec succès.
-
 
 ![](images/code_barre.png)
 
 ## Infra
 
-Au début le pipeline chargé d'effectuer les unitaires utilisait une base données distante. Ainsi elle était persistante même après la fin du pipeline. Cela nous a posé beaucoup de problème, parfois certains tests n'effaçait pas entièrement leurs champs ce qui entraînait les futures pipelines en erreur.
+Au début le pipeline chargé d'effectuer les d'intégration utilisait une base de données distante. Ainsi elle était persistante même après la fin du pipeline. Cela nous a posé beaucoup de problème, parfois certains tests n'effaçait pas entièrement leurs champs ce qui entraînait les futures pipelines en erreur.
 
-Nous avons ainsi choix après d'utiliser une base de données temporaire qui est créée uniquement durant le pipeline puis supprimé automatiquement. Voici la solution utilisée, la création et destruction sont gérées par la Drone CI automatiquement 
+Nous avons ainsi trouver pour solution d'utiliser une base de données temporaire qui est créée uniquement durant le pipeline puis supprimée automatiquement. Voici la solution utilisée, la création et destruction sont gérées par Drone CI automatiquement 
 
 ```yml
 services:
@@ -658,11 +653,22 @@ services:
 
 ## Machine learning 
 
-Pour la partie recommandation, la plus grosse difficulté à été de trouver des informations pour créer un modèle adapter à la recommandation de recettes. En effet, comme nous n'avons jamais eu de cours sur les systèmes de recommandation ainsi que la gestion d'information textuelle, il a fallu fait un gros exercice de recherche pour comprendre le fonctionnement de NLP ainsi que des systèmes de recommandation (assez différent de système de classification ou de régression classique que nous avions déjà vu).
+Pour la partie recommandation, la plus grosse difficulté à été de trouver des informations pour créer un modèle adapté à la recommandation de recettes. En effet, comme nous n'avons jamais eu de cours sur les systèmes de recommandation ainsi que la gestion d'information textuelle, il a fallu fait un gros exercice de recherche pour comprendre le fonctionnement de NLP ainsi que des systèmes de recommandation (assez différent de système de classification ou de régression classique que nous avions déjà vu).
 Une fois un tutoriel assez clair trouvé, il a fallu corriger les erreurs contenues ce qui a été assez difficile.
 
-# Amélioration possible
+# Conclusion
+
+## Retour d'expérience
+
+Ce projet était très intéressant et enrichissant, car il nous a laissé suffisamment de liberté pour choisir un sujet et des technologies qui nous intéressaient et nous motivaient. Nous avons pris beaucoup de plaisir à travailler sur ce projet et avons pu monter en compétences sur des sujets de notre choix. Cependant, nous n'avons pas pu mener à terme nos ambitions, le temps alloué n'étant finalement pas en adéquation avec ce qui a été annoncé.
+
+
+## Amélioration possible
 
 Comme nous avons pu le voir entre l'application actuelle et celle que nous avions imaginée, nous n'avons pas eu le temps de développer toutes les fonctionnalités que nous avions souhaitées.
 Nous aurions particulièrement aimé réaliser la fonctionnalité permettant de planifier les repas et de les présenter sous forme de calendrier.
-Au niveau du machine learning, nous aurions aussi aimé avoir plus de temps pour mieux gérer les hyper-paramètres du modèle obtenu, afin d'améliorer les recommandations. En effet, même si elles restent pertinentes, certaines recommandations peuvent être assez difficiles à comprendre. De plus, il serait particulièrement intéressant de réussir à intégrer ce système à notre application, et de trouver un moyen d'ajouter des recettes au modèle sans avoir à le réentrainer entièrement.
+
+Au niveau du machine learning, nous aurions aussi aimé avoir plus de temps pour mieux gérer les hyper-paramètres du modèle obtenu, afin d'améliorer les recommandations. En effet, même si elles restent pertinentes, certaines recommandations peuvent être assez difficiles à comprendre. De plus, il serait particulièrement intéressant de réussir à intégrer ce système à notre application, et de trouver un moyen d'ajouter des recettes au modèle sans avoir à le ré-entrainer entièrement.
+
+
+
